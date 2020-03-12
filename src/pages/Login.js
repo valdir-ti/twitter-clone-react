@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import twitterLogo from "../twitter.png";
 import "./Login.css";
 
@@ -12,7 +11,7 @@ export default class Login extends Component {
     e.preventDefault();
     const { username } = this.state;
 
-    if (!username.length) return;
+    if (username.length <= 3) return;
 
     localStorage.setItem("@goTwitter:username", username);
 

@@ -1,0 +1,21 @@
+.timeline-wrapper {
+  justify-content: start;
+  margin-top: 50px;
+}
+
+form {
+  width: 400px;
+  box-shadow: 0 0 3pt 15pt #e1e9f8;
+  border-radius: 1px;
+  margin-top: 20px;
+}
+
+form>textarea {
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+form>textarea::placeholder {
+  color: #999;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import api from "../services/api";
+
 import twitterLogo from "../twitter.png";
 import "./Timeline.css";
 
@@ -11,13 +13,13 @@ export default class Timeline extends Component {
     this.setState({ newTweet: e.target.value });
   };
 
-  handleNewTweet = e => {
+  handleNewTweet = async e => {
     if (e.keyCode !== 13) return;
 
     const content = this.state.newTweet;
     const author = localStorage.getItem("@goTwitter:username");
-
-    console.log(content, author);
+    await api.post("tweets", { author, content });
+    this.setState({ newTweet: "" });
   };
 
   render() {
